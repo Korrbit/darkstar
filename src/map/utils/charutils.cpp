@@ -2297,6 +2297,7 @@ namespace charutils
         bool isInDynamis = PChar->isInDynamis();
 
         for (auto&& slot : {std::make_tuple(SLOT_MAIN, std::ref(main_ws), std::ref(main_ws_dyn)),
+            std::make_tuple(SLOT_SUB, std::ref(main_ws), std::ref(main_ws_dyn)),
             std::make_tuple(SLOT_RANGED, std::ref(range_ws), std::ref(range_ws_dyn))})
         {
             if (PChar->m_Weapons[std::get<0>(slot)])
@@ -2310,6 +2311,20 @@ namespace charutils
 
         //add in melee ws
         PItem = dynamic_cast<CItemWeapon*>(PChar->getEquip(SLOT_MAIN));
+        uint8 skill = PItem ? PItem->getSkillType() : 0;
+        auto& WeaponSkillList = battleutils::GetWeaponSkills(skill);
+        for (auto&& PSkill : WeaponSkillList)
+        {
+            if (battleutils::CanUseWeaponskill(PChar, PSkill) ||
+                PSkill->getID() == main_ws ||
+                (isInDynamis && (PSkill->getID() == main_ws_dyn)))
+            {
+                addWeaponSkill(PChar, PSkill->getID());
+            }
+        }
+        
+        //add in sub mele ws
+        PItem = dynamic_cast<CItemWeapon*>(PChar->getEquip(SLOT_SUB));
         uint8 skill = PItem ? PItem->getSkillType() : 0;
         auto& WeaponSkillList = battleutils::GetWeaponSkills(skill);
         for (auto&& PSkill : WeaponSkillList)
