@@ -2325,7 +2325,7 @@ namespace charutils
         
         //add in sub mele ws
         PItem = dynamic_cast<CItemWeapon*>(PChar->getEquip(SLOT_SUB));
-        uint8 skill = PItem ? PItem->getSkillType() : 0;
+        skill = PItem ? PItem->getSkillType() : 0;
         auto& WeaponSkillList = battleutils::GetWeaponSkills(skill);
         for (auto&& PSkill : WeaponSkillList)
         {
