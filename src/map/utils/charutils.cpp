@@ -2333,7 +2333,7 @@ namespace charutils
             auto& WeaponSkillListSub = battleutils::GetWeaponSkills(skill);
             for (auto&& PSkill : WeaponSkillListSub)
             {
-                if (/* battleutils::CanUseWeaponskill(PChar, PSkill) || */
+                if (battleutils::CanUseWeaponskill(PChar, PSkill) ||
                     PSkill->getID() == sub_ws ||
                     (isInDynamis && (PSkill->getID() == sub_ws_dyn)))
                 {
