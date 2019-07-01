@@ -31,6 +31,7 @@ This file is part of DarkStar-server source code.
 #include <stdio.h>
 #include <string.h>
 #include <array>
+#include <iostream>
 
 #include "../lua/luautils.h"
 
