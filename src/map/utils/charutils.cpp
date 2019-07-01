@@ -2327,23 +2327,30 @@ namespace charutils
         }
         
         //add in sub mele ws
-        if(!PChar->getEquip(SLOT_SUB)->IsShield())
+        try 
         {
-            PItem = dynamic_cast<CItemWeapon*>(PChar->getEquip(SLOT_SUB));
-            if(PItem != nullptr && PItem->isType(ITEM_WEAPON))
+            if(PChar->getEquip(SLOT_SUB)->IsShield() == false)
             {
-                skill = PItem ? PItem->getSkillType() : 0;
-                auto& WeaponSkillListSub = battleutils::GetWeaponSkills(skill);
-                for (auto&& PSkill : WeaponSkillListSub)
+                PItem = dynamic_cast<CItemWeapon*>(PChar->getEquip(SLOT_SUB));
+                if(PItem != nullptr && PItem->isType(ITEM_WEAPON))
                 {
-                    if (battleutils::CanUseWeaponskill(PChar, PSkill) ||
-                        PSkill->getID() == sub_ws ||
-                        (isInDynamis && (PSkill->getID() == sub_ws_dyn)))
+                    skill = PItem ? PItem->getSkillType() : 0;
+                    auto& WeaponSkillListSub = battleutils::GetWeaponSkills(skill);
+                    for (auto&& PSkill : WeaponSkillListSub)
                     {
-                        addWeaponSkill(PChar, PSkill->getID());
+                        if (battleutils::CanUseWeaponskill(PChar, PSkill) ||
+                            PSkill->getID() == sub_ws ||
+                            (isInDynamis && (PSkill->getID() == sub_ws_dyn)))
+                        {
+                            addWeaponSkill(PChar, PSkill->getID());
+                        }
                     }
                 }
             }
+        }
+        catch(const std::exception& e)
+        {
+            std::cout << e.what();
         }
 
         //add in ranged ws
