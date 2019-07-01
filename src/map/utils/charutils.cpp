@@ -2327,10 +2327,9 @@ namespace charutils
         }
         
         //add in sub mele ws
-        
-        if(!PChar->getEquip(SLOT_SUB)->isShield()) {
+        if(!PChar->getEquip(SLOT_SUB)->isShield())
+        {
             PItem = dynamic_cast<CItemWeapon*>(PChar->getEquip(SLOT_SUB));
-            
             if(PItem != nullptr && PItem->isType(ITEM_WEAPON))
             {
                 skill = PItem ? PItem->getSkillType() : 0;
