@@ -685,7 +685,23 @@ INSERT INTO `mob_skill_lists` VALUES ('Asterion_0',156,499); -- back_swish
 INSERT INTO `mob_skill_lists` VALUES ('Asterion_0',156,500); -- mow
 INSERT INTO `mob_skill_lists` VALUES ('Asterion_0',156,501); -- frightful_roar
 INSERT INTO `mob_skill_lists` VALUES ('Asterion_0',156,502); -- mortal_ray
--- 157 to 163: free
+INSERT INTO `mob_skill_lists` VALUES ('Toadcushion',157,310); -- queasyshroom
+INSERT INTO `mob_skill_lists` VALUES ('Toadcushion',157,311); -- numbshroom
+INSERT INTO `mob_skill_lists` VALUES ('Toadcushion',157,312); -- shakeshroom
+INSERT INTO `mob_skill_lists` VALUES ('Toadcushion',157,315); -- dark_spore
+INSERT INTO `mob_skill_lists` VALUES ('Toadsquab',158,309); -- spore
+INSERT INTO `mob_skill_lists` VALUES ('Toadsquab',158,310); -- queasyshroom
+INSERT INTO `mob_skill_lists` VALUES ('Toadsquab',158,311); -- numbshroom
+INSERT INTO `mob_skill_lists` VALUES ('Toadsquab',158,312); -- shakeshroom
+INSERT INTO `mob_skill_lists` VALUES ('Toadpillow',159,308); -- frogkick
+INSERT INTO `mob_skill_lists` VALUES ('Toadpillow',159,310); -- queasyshroom
+INSERT INTO `mob_skill_lists` VALUES ('Toadpillow',159,311); -- numbshroom
+INSERT INTO `mob_skill_lists` VALUES ('Toadpillow',159,312); -- shakeshroom
+INSERT INTO `mob_skill_lists` VALUES ('Toadbolster',160,310); -- queasyshroom
+INSERT INTO `mob_skill_lists` VALUES ('Toadbolster',160,311); -- numbshroom
+INSERT INTO `mob_skill_lists` VALUES ('Toadbolster',160,312); -- shakeshroom
+INSERT INTO `mob_skill_lists` VALUES ('Toadbolster',160,314); -- silence_gas
+-- 161 to 163: free
 INSERT INTO `mob_skill_lists` VALUES ('Hydra',164,1828);
 INSERT INTO `mob_skill_lists` VALUES ('Hydra',164,1829);
 INSERT INTO `mob_skill_lists` VALUES ('Hydra',164,1830);
@@ -1433,7 +1449,18 @@ INSERT INTO `mob_skill_lists` VALUES ('Pandemonium',316,2116);
 INSERT INTO `mob_skill_lists` VALUES ('Pandemonium',316,2117);
 INSERT INTO `mob_skill_lists` VALUES ('Pandemonium',316,2118);
 INSERT INTO `mob_skill_lists` VALUES ('Pandemonium',316,2119);
--- 317 to 318: free
+INSERT INTO `mob_skill_lists` VALUES ('Eldertaur',317,498); -- triclip
+INSERT INTO `mob_skill_lists` VALUES ('Eldertaur',317,499); -- back_swish
+INSERT INTO `mob_skill_lists` VALUES ('Eldertaur',317,500); -- mow
+INSERT INTO `mob_skill_lists` VALUES ('Eldertaur',317,501); -- frightful_roar
+INSERT INTO `mob_skill_lists` VALUES ('Eldertaur',317,503); -- unblessed_armor
+INSERT INTO `mob_skill_lists` VALUES ('Eldertaur',317,1360); -- apocalyptic_ray
+INSERT INTO `mob_skill_lists` VALUES ('Mindertaur',318,498); -- triclip
+INSERT INTO `mob_skill_lists` VALUES ('Mindertaur',318,499); -- back_swish
+INSERT INTO `mob_skill_lists` VALUES ('Mindertaur',318,500); -- mow
+INSERT INTO `mob_skill_lists` VALUES ('Mindertaur',318,501); -- frightful_roar
+INSERT INTO `mob_skill_lists` VALUES ('Mindertaur',318,502); -- mortal_ray (TODO: change to Chthonian Ray when it is coded)
+INSERT INTO `mob_skill_lists` VALUES ('Mindertaur',318,503); -- unblessed_armor
 INSERT INTO `mob_skill_lists` VALUES ('Avatar-Shiva',319,881);
 INSERT INTO `mob_skill_lists` VALUES ('Avatar-Shiva',319,882);
 INSERT INTO `mob_skill_lists` VALUES ('Avatar-Shiva',319,883);
@@ -2270,7 +2297,10 @@ INSERT INTO `mob_skill_lists` VALUES ('Morimar',491,3161);
 INSERT INTO `mob_skill_lists` VALUES ('Morimar',491,3162);
 INSERT INTO `mob_skill_lists` VALUES ('Morimar',491,3163);
 INSERT INTO `mob_skill_lists` VALUES ('Morimar',491,3164);
--- 492: free
+INSERT INTO `mob_skill_lists` VALUES ('Sobbing_Eyes',492,437); -- death_ray
+INSERT INTO `mob_skill_lists` VALUES ('Sobbing_Eyes',492,438); -- hex_eye
+INSERT INTO `mob_skill_lists` VALUES ('Sobbing_Eyes',492,439); -- petro_gaze
+INSERT INTO `mob_skill_lists` VALUES ('Sobbing_Eyes',492,440); -- catharsis
 INSERT INTO `mob_skill_lists` VALUES ('Ashrakk',493,3363);
 INSERT INTO `mob_skill_lists` VALUES ('Ashrakk',493,3364);
 INSERT INTO `mob_skill_lists` VALUES ('Ashrakk',493,3365);
@@ -2289,7 +2319,11 @@ INSERT INTO `mob_skill_lists` VALUES ('Astral_Flow_Pet',495,916);
 INSERT INTO `mob_skill_lists` VALUES ('Astral_Flow_Pet',495,917);
 INSERT INTO `mob_skill_lists` VALUES ('Astral_Flow_Pet',495,918);
 INSERT INTO `mob_skill_lists` VALUES ('ChanequeMandragora',496,2210);
--- 497: free
+INSERT INTO `mob_skill_lists` VALUES ('Gerjis',497,270); -- roar
+INSERT INTO `mob_skill_lists` VALUES ('Gerjis',497,271); -- razor_fang
+INSERT INTO `mob_skill_lists` VALUES ('Gerjis',497,273); -- claw_cyclone
+INSERT INTO `mob_skill_lists` VALUES ('Gerjis',497,1322); -- gerjis_grip
+-- INSERT INTO `mob_skill_lists` VALUES ('Gerjis',497,1681); -- crossthrash
 -- 498: Cyranuce_M_Cutauleon
 -- 499 to 699: free
 INSERT INTO `mob_skill_lists` VALUES ('Demonic_Tiphia',700,334);
@@ -2336,7 +2370,8 @@ INSERT INTO `mob_skill_lists` VALUES ('DynamisYagudoNM',710,619);
 INSERT INTO `mob_skill_lists` VALUES ('DynamisYagudoNM',710,620);
 INSERT INTO `mob_skill_lists` VALUES ('DynamisYagudoNM',710,633);
 INSERT INTO `mob_skill_lists` VALUES ('DynamisYagudoNM',710,1067);
--- 711: free
+INSERT INTO `mob_skill_lists` VALUES ('Petrifying_Pair',711,370); -- baleful_gaze
+INSERT INTO `mob_skill_lists` VALUES ('Petrifying_Pair',711,373); -- secretion
 INSERT INTO `mob_skill_lists` VALUES ('Sahagin DRG',712,770);
 INSERT INTO `mob_skill_lists` VALUES ('Sahagin DRG',712,771);
 INSERT INTO `mob_skill_lists` VALUES ('Sahagin DRG',712,774);
