@@ -28,7 +28,7 @@ local battlefields = {
 
     [8] = {                 -- BONEYARD GULLY
         { 0,  672,    0},   -- Head Wind (PM5-3 U2)
-        { 1,  673,    0},   -- Like the Wind (ENM)
+     -- { 1,  673,    0},   -- Like the Wind (ENM) -- TODO: mob constantly runs during battle
      -- { 2,  674,    0},   -- Sheep in Antlion's Clothing (ENM)
      -- { 3,  675,    0},   -- Shell We Dance? (ENM)
      -- { 4,  676,    0},   -- Totentanz (ENM)
@@ -293,7 +293,7 @@ local battlefields = {
 
     [168] = {               -- CHAMBER OF ORACLES
         { 0,  192,    0},   -- Through the Quicksand Caves (ZM6)
-     -- { 1,  193, 1130},   -- Legion XI Comitatensis (BS60)
+        { 1,  193, 1130},   -- Legion XI Comitatensis (BS60)
         { 2,  194, 1437},   -- Shattering Stars (SAM LB5)
         { 3,  195, 1438},   -- Shattering Stars (NIN LB5)
         { 4,  196, 1439},   -- Shattering Stars (DRG LB5)
