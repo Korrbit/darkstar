@@ -11,6 +11,11 @@ function onBattlefieldTick(battlefield, tick)
     dsp.battlefield.onBattlefieldTick(battlefield, tick)
 end
 
+function onBattlefieldInitialise(battlefield)
+    battlefield:setLocalVar("loot", 1)
+    battlefield:setLocalVar("lootSpawned", 1)
+end
+
 function onBattlefieldRegister(player, battlefield)
 end
 
@@ -36,7 +41,7 @@ function onEventFinish(player, csid, option)
             player:completeMission(ZILART, dsp.mission.id.zilart.THE_CELESTIAL_NEXUS)
             player:addMission(ZILART, dsp.mission.id.zilart.AWAKENING)
             player:addTitle(dsp.title.BURIER_OF_THE_ILLUSION)
-            player:setVar("ZilartStatus", 0)
+            player:setCharVar("ZilartStatus", 0)
         end
         player:setPos(0, -18, 137, 64, 251) -- Hall of the Gods
     end

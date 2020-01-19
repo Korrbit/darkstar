@@ -681,6 +681,9 @@ uint16 CBattleEntity::ACC(uint8 attackNumber, uint8 offsetAccuracy)
             ACC += (int16)(DEX() * 0.5);
         }
         ACC = (ACC + m_modStat[Mod::ACC] + offsetAccuracy);
+        auto PChar = dynamic_cast<CCharEntity *>(this);
+        if (PChar)
+            ACC += PChar->PMeritPoints->GetMeritValue(MERIT_ACCURACY, PChar);
         ACC = ACC + std::min<int16>((ACC * m_modStat[Mod::FOOD_ACCP] / 100), m_modStat[Mod::FOOD_ACC_CAP]);
         return std::max<int16>(0, ACC);
     }
@@ -1179,8 +1182,10 @@ void CBattleEntity::Spawn()
 
 void CBattleEntity::Die()
 {
-    auto PKiller {GetEntity(m_OwnerID.targid)};
-    PAI->EventHandler.triggerListener("DEATH", this, PKiller);
+    if (CBaseEntity* PKiller = GetEntity(m_OwnerID.targid))
+        PAI->EventHandler.triggerListener("DEATH", this, PKiller);
+    else
+        PAI->EventHandler.triggerListener("DEATH", this);
     SetBattleTargetID(0);
 }
 
@@ -1276,8 +1281,10 @@ void CBattleEntity::OnCastFinished(CMagicState& state, action_t& action)
             PTarget->StatusEffectContainer->DelStatusEffect(EFFECT_COPY_IMAGE);
         }
 
-        // TODO: this is really hacky and should eventually be moved into lua
-        if (PSpell->canHitShadow() && aoeType == SPELLAOE_NONE && battleutils::IsAbsorbByShadow(PTarget))
+        // TODO: this is really hacky and should eventually be moved into lua, and spellFlags should probably be in the spells table..
+        if (PSpell->canHitShadow() && aoeType == SPELLAOE_NONE
+            && battleutils::IsAbsorbByShadow(PTarget)
+            && !(PSpell->getFlag() & SPELLFLAG_IGNORE_SHADOWS))
         {
             // take shadow
             msg = 31;
@@ -1293,7 +1300,7 @@ void CBattleEntity::OnCastFinished(CMagicState& state, action_t& action)
             if (PSpell->getSkillType() == SKILLTYPE::SKILL_ENFEEBLING_MAGIC)
                 StatusEffectContainer->DelStatusEffect(EFFECT_SABOTEUR);
 
-            // remove effects from damage
+            // Remove effects from damage
             if (PSpell->canTargetEnemy() && actionTarget.param > 0 && PSpell->dealsDamage())
             {
                 PTarget->StatusEffectContainer->DelStatusEffectsByFlag(EFFECTFLAG_DAMAGE);
@@ -1315,7 +1322,7 @@ void CBattleEntity::OnCastFinished(CMagicState& state, action_t& action)
             }
         }
 
-        if (actionTarget.animation == 122 && msg == 283) // teleport spells don't target unqualified members
+        if (actionTarget.animation == 122 && msg == 283) // Teleport spells don't target unqualified members
         {
             actionList.actionTargets.pop_back();
             continue;
